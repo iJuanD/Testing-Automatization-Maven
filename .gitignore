@@ -1,0 +1,18 @@
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Maven
+target/
+*.log
+*.class
+
+# IntelliJ (por si alguien lo abre después)
+.idea/
+*.iml
+
+# Archivos personales
+.DS_Store
+Thumbs.db
