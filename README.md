@@ -1,29 +1,49 @@
-<<<<<<< HEAD
-# Serenity JUnit Starter project
+# Prueba Técnica - Automatización de Pruebas Web con Serenity BDD
 
-Get started quickly with Serenity BDD and JUnit 5 with this simple starter project. 
+**Proyecto**: Automatización del flujo de registro de usuario en Advantage Online Shopping  
+**Tecnologías principales**: Java 17 · Maven · JUnit 5 · Selenium WebDriver · Serenity BDD  
+**Patrón de diseño**: Page Object Model (POM)  
 
-## Get the code
+## Descripción del proyecto
 
-Click on the [Use This Template button](https://github.com/serenity-bdd/serenity-junit-starter/generate) to create a new project in your own Github account. 
+Este repositorio contiene una prueba técnica de automatización de pruebas web que valida el escenario completo de **registro de un nuevo usuario** en el sitio [Advantage Online Shopping](https://www.advantageonlineshopping.com/#/).
 
-Or simply [download a zip](https://github.com/serenity-bdd/serenity-junit-starter/archive/master.zip) file.
+El objetivo principal fue utilizar:
+- Uso del patrón **Page Object Model**
+- Configuración de un proyecto Maven moderno
+- Integración de Serenity BDD con Selenium y JUnit 5
+- Manejo de esperas explícitas, localizadores robustos y generación de reportes profesionales
+- Resolución de problemas reales (cambios en atributos del sitio, timing de popups, mensajes de error ambiguos)
 
-## Running the tests under Maven
+## Características clave implementadas
 
-The template project comes with both Maven and Gradle build scripts. To run the tests with Maven, open a command window and run:
+- Generación dinámica y única de usuarios (timestamp + prefijo) para evitar duplicados
+- Llenado completo del formulario de registro (incluyendo selección de país Colombia)
+- Manejo de checkbox "I agree" y validaciones frontend/backend
+- Uso de esperas inteligentes de Serenity (`waitUntilVisible`, `waitUntilClickable`, `waitUntilEnabled`)
+- Scroll con JavaScript para elementos fuera de vista
+- Validación final del nombre de usuario en el header (`#menuUserLink`)
+- Reportes detallados con screenshots y pasos en lenguaje natural (generados por Serenity)
 
-  ./mvnw clean verify
+## Tecnologías y herramientas
 
-## Use Gradle
+- **Lenguaje**: Java 17
+- **Framework de pruebas**: Serenity BDD + Selenium WebDriver
+- **Patrón**: Page Object Model
+- **Ejecución de tests**: JUnit 5
+- **Gestión de dependencias y build**: Maven
+- **Assert library**: AssertJ
+- **IDE**: Eclipse
+- **Navegador**: Chrome (manejo automático del driver por Serenity)
 
-For GRADLE, pen a command window and run:
 
-  ./gradlew test 
+## Cómo ejecutar los tests
 
-## Viewing the reports
-
-Both of the commands provided above will produce a Serenity test report in the `target/site/serenity` directory. Go take a look!
-=======
-# Testing-Maven
->>>>>>> f13c10f30656c7ba60c3c5553139c175a36f1f0b
+1. Clonar el repositorio o descomprimirlo
+2. Abrir el proyecto en Eclipse o IntelliJ como proyecto Maven
+3. Actualizar dependencias Maven:
+   - Eclipse: Clic derecho → Maven → Update Project
+   - IntelliJ: Clic derecho en pom.xml → Maven → Reload project
+4. Ejecutar los tests:
+   ```bash
+   mvn clean verify
